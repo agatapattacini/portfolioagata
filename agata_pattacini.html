@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agata Pattacini — Profilo personale</title>
+  <meta name="description" content="Sito personale di Agata Pattacini: percorso, esperienza, interessi e contatti." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --color-bg: #faf4ee;
+      --color-surface: #fffaf6;
+      --color-surface-2: #f7eee6;
+      --color-surface-offset: #f2e5da;
+      --color-border: rgba(33, 23, 19, 0.12);
+      --color-text: #221713;
+      --color-text-muted: #665953;
+      --color-text-faint: #998980;
+      --color-primary: #d98272;
+      --color-primary-hover: #c66f5f;
+      --color-primary-soft: #f4d3cb;
+      --color-accent: #1f1714;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.9rem;
+      --radius-lg: 1.4rem;
+      --radius-xl: 2rem;
+      --shadow-sm: 0 8px 20px rgba(34, 23, 19, 0.05);
+      --shadow-md: 0 18px 40px rgba(34, 23, 19, 0.08);
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'Work Sans', Arial, sans-serif;
+      --content: 1120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      color: var(--color-text);
+      background: linear-gradient(180deg, #fcf7f2 0%, #faf4ee 100%);
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    .container { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
+    .section { padding: clamp(var(--space-12), 8vw, var(--space-24)) 0; }
+    .eyebrow {
+      font-size: var(--text-xs);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-3);
+    }
+    .title-display {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      line-height: 1.05;
+      margin-bottom: var(--space-4);
+    }
+    .lead {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      max-width: 34ch;
+    }
+    .muted { color: var(--color-text-muted); }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(250, 244, 238, 0.86);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      min-height: 72px;
+    }
+    .brand {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      font-size: var(--text-sm);
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text-muted);
+    }
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-cv {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.4rem 0.95rem;
+      border-radius: 999px;
+      background: var(--color-primary-soft);
+      color: var(--color-accent);
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: 180ms ease;
+    }
+    .nav-cv:hover { background: var(--color-primary); color: #fff7f2; }
+    .hero {
+      padding: var(--space-6) 0 var(--space-16);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-10);
+      align-items: end;
+    }
+    .hero-copy p { margin-top: var(--space-6); }
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-top: var(--space-8);
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      transition: 180ms ease;
+      border: 1px solid transparent;
+    }
+    .button-primary {
+      background: var(--color-accent);
+      color: #fff7f2;
+    }
+    .button-primary:hover { background: #000; }
+    .button-secondary {
+      background: transparent;
+      border-color: var(--color-border);
+      color: var(--color-text);
+    }
+    .button-secondary:hover { background: var(--color-surface); }
+    .hero-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-md);
+    }
+    .hero-card ul { list-style: none; display: grid; gap: var(--space-4); }
+    .hero-card li { border-top: 1px solid var(--color-border); padding-top: var(--space-4); }
+    .hero-card li:first-child { border-top: 0; padding-top: 0; }
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery-carousel {
+      position: relative;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-4);
+    }
+    .gallery-frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: calc(var(--radius-lg) - 4px);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(217,130,114,0.14), rgba(255,255,255,0.55)),
+        var(--color-surface-2);
+      border: 1px dashed rgba(34, 23, 19, 0.16);
+      min-height: 260px;
+    }
+    .gallery-slide {
+      position: absolute;
+      inset: 0;
+      padding: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      opacity: 0;
+      transform: translateX(18px);
+      transition: opacity 220ms ease, transform 220ms ease;
+      pointer-events: none;
+    }
+    .gallery-slide.is-active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    .gallery-visual {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(34,23,19,0.02) 100%),
+        linear-gradient(140deg, rgba(217,130,114,0.24), rgba(255,255,255,0.12));
+    }
+    .gallery-tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 247, 242, 0.82);
+      color: var(--color-text);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+      position: relative;
+      z-index: 1;
+    }
+    .gallery-slide strong {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-2);
+      position: relative;
+      z-index: 1;
+    }
+    .gallery-slide .muted {
+      position: relative;
+      z-index: 1;
+      max-width: 28ch;
+      color: rgba(67, 57, 52, 0.9);
+    }
+    .gallery-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+    .gallery-buttons {
+      display: flex;
+      gap: var(--space-2);
+    }
+    .gallery-button {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .gallery-button:hover {
+      background: rgba(217,130,114,0.12);
+      border-color: rgba(34,23,19,0.16);
+    }
+    .gallery-dots {
+      display: flex;
+      gap: var(--space-2);
+      align-items: center;
+    }
+    .gallery-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(34,23,19,0.16);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+    .gallery-dot.is-active {
+      width: 26px;
+      background: var(--color-primary);
+    }
+    .timeline {
+      display: grid;
+      gap: var(--space-5);
+    }
+    .timeline-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+    }
+    .timeline-item h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-2);
+    }
+    .timeline-meta {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-3);
+    }
+    .timeline-item p + p { margin-top: var(--space-3); }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+    .pill {
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: var(--color-primary-soft);
+      color: var(--color-accent);
+      font-size: var(--text-sm);
+      font-weight: 500;
+    }
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    .interest-box {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+    }
+    .interest-box h3 {
+      font-size: var(--text-base);
+      margin-bottom: var(--space-3);
+    }
+    .cta {
+      background: var(--color-accent);
+      color: #fff7f2;
+      border-radius: 2rem;
+      padding: clamp(var(--space-8), 6vw, var(--space-16));
+      display: grid;
+      gap: var(--space-5);
+    }
+    .cta .section-title,
+    .cta .muted { color: #fff7f2; }
+    .cta-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    .cta .button-primary {
+      background: var(--color-primary);
+      color: var(--color-accent);
+    }
+    .cta .button-primary:hover { background: #e29486; }
+    .cta .button-secondary {
+      border-color: rgba(255,247,242,0.28);
+      color: #fff7f2;
+    }
+    .footer {
+      padding: var(--space-8) 0 var(--space-12);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    @media (max-width: 920px) {
+      .hero-grid, .split, .interest-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav { align-items: flex-start; padding: 1rem 0; flex-direction: column; }
+      .hero-card { padding: var(--space-6); }
+      .gallery-controls { align-items: flex-start; flex-direction: column; }
+      .gallery-slide .muted { max-width: 100%; }
+      .interest-grid { grid-template-columns: 1fr; }
+      .title-display { line-height: 1; }
+    }
+    /* Hero photo */
+    .hero-photo {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-xl);
+      border: 1px dashed rgba(34, 23, 19, 0.18);
+      background:
+        linear-gradient(160deg, rgba(217,130,114,0.20), rgba(255,255,255,0.30)),
+        var(--color-surface-2);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: var(--space-2);
+      padding: var(--space-6);
+      overflow: hidden;
+    }
+    .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo strong { font-size: var(--text-base); position: relative; z-index: 1; }
+    .hero-photo-tag {
+      width: fit-content;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 247, 242, 0.82);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Journey / percorso */
+    .journey {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+    .journey-step {
+      position: relative;
+      padding-top: calc(40px + var(--space-4));
+      text-align: center;
+    }
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      top: 19px;
+      left: calc(50% + 21px);
+      width: calc(100% + var(--space-4) - 42px);
+      height: 2px;
+      background: rgba(217, 130, 114, 0.55);
+      z-index: 0;
+    }
+    .journey-step:last-child::before { display: none; }
+    .journey-node {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22342.000000pt%22%20height%3D%22427.000000pt%22%20viewBox%3D%220%200%20342.000000%20427.000000%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%3E%20%3Cg%20transform%3D%22translate%280.000000%2C427.000000%29%20scale%280.100000%2C-0.100000%29%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22%3E%20%3Cpath%20d%3D%22M1680%203948%20c-422%20-40%20-812%20-295%20-1029%20-673%20-135%20-236%20-199%20-531%20-171%20-793%2028%20-263%2091%20-421%20314%20-777%20118%20-187%20179%20-287%20411%20-660%2065%20-104%20153%20-246%20195%20-315%2043%20-69%20125%20-201%20183%20-295%20178%20-288%20177%20-286%20215%20-302%2057%20-24%20102%20-5%20145%2060%2030%2046%20414%20688%20917%201532%20190%20321%20226%20397%20274%20590%2043%20172%2041%20426%20-5%20610%20-140%20564%20-613%20971%20-1189%201024%20-127%2012%20-125%2012%20-260%20-1z%20m380%20-237%20c217%20-49%20403%20-152%20557%20-308%20325%20-328%20419%20-805%20243%20-1228%20-27%20-62%20-991%20-1690%20-1018%20-1717%20-5%20-5%20-54%2065%20-109%20154%20-55%2090%20-145%20235%20-200%20323%20-55%2088%20-178%20286%20-273%20440%20-96%20154%20-219%20352%20-274%20440%20-192%20308%20-228%20383%20-269%20559%20-28%20121%20-29%20333%20-3%20456%2048%20225%20151%20416%20311%20575%20184%20185%20391%20285%20680%20329%2062%209%20273%20-4%20355%20-23z%22%2F%3E%20%3Cpath%20d%3D%22M1652%203260%20c-415%20-109%20-624%20-575%20-428%20-956%20248%20-485%20944%20-485%201192%200%20197%20383%20-14%20849%20-432%20956%20-100%2026%20-233%2026%20-332%200z%20m361%20-243%20c93%20-46%20175%20-130%20220%20-224%2030%20-64%2032%20-74%2032%20-184%200%20-113%20-1%20-117%20-37%20-190%20-49%20-100%20-121%20-171%20-218%20-218%20-73%20-35%20-78%20-36%20-190%20-36%20-112%200%20-117%201%20-190%2036%20-48%2023%20-94%2056%20-129%2090%20-34%2035%20-67%2081%20-90%20129%20-35%2073%20-36%2078%20-36%20191%200%20113%201%20117%2037%20190%2044%2088%20116%20165%20197%20208%2080%2043%20121%2051%20233%2047%2089%20-3%20105%20-6%20171%20-39z%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 1;
+    }
+    .journey-body {
+      background: var(--color-surface);
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+    }
+    .journey-body h3 { font-size: var(--text-base); margin-bottom: var(--space-1); }
+    .journey-body .timeline-meta { margin-bottom: var(--space-2); }
+    .journey-body .muted { max-width: 26ch; margin: 0 auto; }
+
+    /* Photo carousel (3 foto visibili) */
+    .photo-carousel { position: relative; margin-top: var(--space-8); }
+    .pc-viewport { overflow: hidden; }
+    .pc-track {
+      display: flex;
+      gap: var(--space-4);
+      transition: transform 320ms ease;
+      will-change: transform;
+    }
+    .pc-card {
+      flex: 0 0 calc((100% - 2 * var(--space-4)) / 3);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .pc-visual {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-bottom: 1px dashed rgba(34, 23, 19, 0.14);
+      background:
+        linear-gradient(160deg, rgba(217,130,114,0.22), rgba(255,255,255,0.18)),
+        var(--color-surface-2);
+    }
+    .pc-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .pc-caption { padding: var(--space-4); }
+    .pc-caption strong { display: block; margin-bottom: var(--space-1); }
+    .pc-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+
+    @media (max-width: 920px) {
+      .journey { grid-template-columns: 1fr; gap: 0; }
+      .journey-step {
+        text-align: left;
+        padding-top: 0;
+        padding-left: calc(30px + var(--space-4));
+        padding-bottom: var(--space-6);
+        min-height: 40px;
+      }
+      .journey-step::before {
+        top: 44px;
+        bottom: 4px;
+        left: 14px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+      .journey-step:last-child::before { display: none; }
+      .journey-node { left: 0; transform: none; top: 0; }
+      .journey-body .muted { margin: 0; max-width: none; }
+      .pc-card { flex-basis: calc((100% - var(--space-4)) / 2); }
+    }
+    @media (max-width: 640px) {
+      .pc-card { flex-basis: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Agata Pattacini</a>
+      <nav class="nav-links" aria-label="Navigazione principale">
+        <a href="#percorso">Percorso</a>
+        <a href="#esperienza">Esperienza</a>
+        <a href="#interessi">Interessi</a>
+        <a href="#contatti">Contatti</a>
+        <a class="nav-cv" href="CV_ITA_Agata Pattacini.pdf" download>Scarica CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Profilo personale</div>
+          <h1 class="title-display">Un percorso costruito tra operatività, persone e contesti internazionali.</h1>
+          <p class="lead">Sono Agata Pattacini. Negli ultimi anni ho lavorato tra logistica fashion, avvio di un magazzino nel Regno Unito e supporto alla direzione, costruendo un profilo preciso, organizzato e concreto.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:agata.pattacini@gmail.com">Scrivimi una mail</a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/agata-pattacini/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+                <div class="hero-photo" aria-label="Foto personale">
+					<img src ="Images\profile-pic.jpeg" alt="Agata Pattacini">
+				</div>
+      </div>
+    </section>
+
+        <section class="section" id="percorso">
+      <div class="container">
+        <div class="eyebrow">Career journey</div>
+        <h2 class="section-title">Il mio percorso, passo dopo passo</h2>
+        <ol class="journey" aria-label="Tappe del percorso">
+          <li class="journey-step">
+            <span class="journey-node" aria-hidden="true"></span>
+            <div class="journey-body">
+              <h3>Roma, IT</h3>
+              <div class="timeline-meta">Studi alla LUISS Guido Carli</div>
+              <p class="muted">Laurea triennale in Economics and Business e magistrale in International Management, in lingua inglese.</p>
+            </div>
+          </li>
+          <li class="journey-step">
+            <span class="journey-node" aria-hidden="true"></span>
+            <div class="journey-body">
+              <h3>Grenoble, FR</h3>
+              <div class="timeline-meta">Erasmus alla Grenoble École de Management</div>
+              <p class="muted">Un'esperienza che ha rafforzato autonomia, adattabilità e apertura internazionale.</p>
+            </div>
+          </li>
+          <li class="journey-step">
+            <span class="journey-node" aria-hidden="true"></span>
+            <div class="journey-body">
+              <h3>Reggio Emilia, IT</h3>
+              <div class="timeline-meta">Primo ingresso nella logistica fashion</div>
+              <p class="muted">Impiegata di magazzino in Snatt: flussi inbound e oltre 20.000 posizioni di stoccaggio.</p>
+            </div>
+          </li>
+          <li class="journey-step">
+            <span class="journey-node" aria-hidden="true"></span>
+            <div class="journey-body">
+              <h3>Londra, UK</h3>
+              <div class="timeline-meta">Avvio del primo centro distributivo UK</div>
+              <p class="muted">Logistic Manager in Omlog UK: fit-out, integrazione di 4 clienti e un team operativo di 10 persone.</p>
+            </div>
+          </li>
+          <li class="journey-step">
+            <span class="journey-node" aria-hidden="true"></span>
+            <div class="journey-body">
+              <h3>Reggio Emilia, IT</h3>
+              <div class="timeline-meta">Ritorno e supporto alla direzione</div>
+              <p class="muted">Assistente di Direzione in Snatt Logistica: tender, costing e offerte tecnico-economiche.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="esperienza">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Esperienza</div>
+          <h2 class="section-title">Le esperienze principali</h2>
+          <div class="pill-list" aria-label="Competenze chiave">
+            <span class="pill">Organizzazione</span>
+            <span class="pill">Coordinamento</span>
+            <span class="pill">Contesti internazionali</span>
+            <span class="pill">Processi</span>
+            <span class="pill">Problem solving</span>
+          </div>
+          <div class="eyebrow" style="margin-top: 1.5rem;">Lingue</div>
+          <div class="pill-list" aria-label="Lingue">
+            <span class="pill">Italiano · madrelingua</span>
+            <span class="pill">Inglese · fluente</span>
+            <span class="pill">Francese · base</span>
+            <span class="pill">Spagnolo · base</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Assistente di Direzione — Snatt Logistica</h3>
+            <div class="timeline-meta">Gennaio 2026 – oggi · Castelnovo di Sotto</div>
+            <p>Supporto attività di general management, tender logistici, valutazione di requisiti operativi, KPI e offerte tecnico-economiche.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Logistic Manager — Omlog UK Ltd</h3>
+            <div class="timeline-meta">Gennaio 2024 – Gennaio 2026 · Londra</div>
+            <p>Ho seguito l'apertura del primo centro distributivo nel Regno Unito, l'integrazione di 4 clienti e il coordinamento di un team operativo di 10 persone.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Impiegata di Magazzino — Snatt</h3>
+            <div class="timeline-meta">Aprile 2021 – Gennaio 2024 · Reggio Emilia</div>
+            <p>Gestione dei flussi inbound, supervisione di oltre 20.000 posizioni di stoccaggio e monitoraggio della qualità del prodotto per clienti del settore fashion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+        <section class="section" id="interessi">
+      <div class="container">
+        <div class="eyebrow">Lato personale</div>
+        <h2 class="section-title">Momenti e passioni</h2>
+        <div class="photo-carousel" aria-label="Galleria fotografica">
+          <div class="pc-viewport">
+            <div class="pc-track">
+              <article class="pc-card">
+                <div class="pc-visual"><img src="Images\esploro.jpeg" alt "Descrizione foto"></div>
+                <div class="pc-caption">
+                  <strong>Fotografia analogica</strong>
+                  <p class="muted">Scatti su pellicola: la mia passione fuori dal lavoro.</p>
+                </div>
+              </article>
+              <article class="pc-card">
+                <div class="pc-visual"><img src="Images\in compagnia.jpeg" alt "Descrizione foto"></div>
+                <div class="pc-caption">
+                  <strong>Pallavolo</strong>
+                  <p class="muted">Oltre 10 anni in squadra, tra gioco di squadra e disciplina.</p>
+                </div>
+              </article>
+              <article class="pc-card">
+                <div class="pc-visual"><img src="foto.jpg" alt "Descrizione foto"></div>
+                <div class="pc-caption">
+                  <strong>Viaggi</strong>
+                  <p class="muted">Città, persone e contesti internazionali da scoprire.</p>
+                </div>
+              </article>
+              <article class="pc-card">
+                <div class="pc-visual"><img src="foto.jpg" alt "Descrizione foto"></div>
+                <div class="pc-caption">
+                  <strong>Sci</strong>
+                  <p class="muted">La montagna d'inverno e il piacere di rimettersi in gioco.</p>
+                </div>
+              </article>
+              <article class="pc-card">
+                <div class="pc-visual"><img src="foto.jpg" alt "Descrizione foto"></div>
+                <div class="pc-caption">
+                  <strong>Tennis</strong>
+                  <p class="muted">Precisione, ritmo e concentrazione.</p>
+                </div>
+              </article>
+              <article class="pc-card">
+                <div class="pc-visual"><img src="foto.jpg" alt "Descrizione foto"></div>
+                <div class="pc-caption">
+                  <strong>Esperienza UK</strong>
+                  <p class="muted">Un ricordo dell'avventura londinese.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="pc-controls">
+            <button class="gallery-button" type="button" data-pc-prev aria-label="Foto precedenti">&#8592;</button>
+            <button class="gallery-button" type="button" data-pc-next aria-label="Foto successive">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contatti">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <div class="eyebrow" style="color: rgba(255,247,242,0.72);">Contatti</div>
+            <h2 class="section-title">Se questo percorso ti interessa, puoi contattarmi qui.</h2>
+            <p class="muted" style="max-width: 36ch; color: rgba(255,247,242,0.82);">Questo sito è pensato come estensione del mio CV: uno spazio semplice per raccontare meglio chi sono, da dove vengo e cosa sto cercando oggi.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button button-primary" href="mailto:agata.pattacini@gmail.com">agata.pattacini@gmail.com</a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/agata-pattacini/" target="_blank" rel="noopener noreferrer">Apri LinkedIn</a>
+            <a class="button button-secondary" href="CV_ITA_Agata Pattacini.pdf" download>Scarica il CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Bozza iniziale del sito personale di Agata Pattacini. Tutti i testi, i link e i placeholder fotografici sono modificabili.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const carousel = document.querySelector('.photo-carousel');
+      if (!carousel) return;
+
+      const viewport = carousel.querySelector('.pc-viewport');
+      const track = carousel.querySelector('.pc-track');
+      const cards = Array.from(track.children);
+      const prevBtn = carousel.querySelector('[data-pc-prev]');
+      const nextBtn = carousel.querySelector('[data-pc-next]');
+      let index = 0;
+
+      function visibleCount() {
+        const w = window.innerWidth;
+        if (w <= 640) return 1;
+        if (w <= 920) return 2;
+        return 3;
+      }
+      function maxIndex() {
+        return Math.max(0, cards.length - visibleCount());
+      }
+      function update() {
+        if (index > maxIndex()) index = maxIndex();
+        if (index < 0) index = 0;
+        const styles = getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+        const step = cards[0].getBoundingClientRect().width + gap;
+        track.style.transform = 'translateX(' + (-index * step) + 'px)';
+      }
+      function move(dir) {
+        const max = maxIndex();
+        index += dir;
+        if (index > max) index = 0;
+        if (index < 0) index = max;
+        update();
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', () => move(-1));
+      if (nextBtn) nextBtn.addEventListener('click', () => move(1));
+
+      // Swipe col dito su mobile
+      let startX = 0;
+      viewport.addEventListener('touchstart', (e) => { startX = e.changedTouches[0].screenX; }, { passive: true });
+      viewport.addEventListener('touchend', (e) => {
+        const d = e.changedTouches[0].screenX - startX;
+        if (Math.abs(d) > 40) move(d < 0 ? 1 : -1);
+      }, { passive: true });
+
+      window.addEventListener('resize', update);
+      window.addEventListener('load', update);
+      update();
+
+      // Avanzamento automatico ogni 4,5s, in pausa col mouse sopra
+      let timer = setInterval(() => move(1), 4500);
+      carousel.addEventListener('mouseenter', () => clearInterval(timer));
+      carousel.addEventListener('mouseleave', () => {
+        timer = setInterval(() => move(1), 4500);
+      });
+    })();
+  </script>
+</body>
+</html>
